@@ -32,10 +32,13 @@ class Dashboard extends Component {
     render() {
         let houseList = this.state.houses.map((house, index) => <House houseData={this.state.houses[index]} key={this.state.houses[index].id} deleteHouse={this.deleteHouse}/>)
         return (
-            <div>
+            <div className='dashboard'>
+                <div className='dashboard-title'>
                 <h1>Dashboard</h1>
+                <Link to='/wizard/step1'><button className='new-property-button'>Add New Property</button></Link>
+                </div>
+                <h2>Home Listings</h2>
                 {houseList}
-                <Link to='/wizard/step1'><button>Add New Property</button></Link>
             </div>
         )
     };

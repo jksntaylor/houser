@@ -3,16 +3,22 @@ import React from 'react';
 export default function House (props) {
     const {id, name, address, city, state, zip, img, mortgage, rent} = props.houseData;
     return (
-        <div>
-            <h1>{name}</h1>
-            <h2>{address}</h2>
-            <h3>{city}</h3>
-            <h3>{state}</h3>
-            <h4>{zip}</h4>
+        <div className='house-container'>
             <img src={img} alt=''/>
-            <h2>{mortgage}</h2>
-            <h2>{rent}</h2>
-            <button onClick={() => {props.deleteHouse(id)}}>Delete</button>
+            <div className='text-info'>
+                <h6>Property Name: {name}</h6>
+                <h6>Address: {address}</h6>
+                <h6>City :{city}</h6>
+                <h6>State: {state}</h6>
+                <h6>Zip Code: {zip}</h6>
+            </div>
+            <div className='money-info'>
+                <h6>Monthly Mortgage: {mortgage}</h6>
+                <h6>Monthly Rent: {rent}</h6>
+            </div>
+            <div className='delete-button-container'>
+                <button className='delete-button' onClick={() => {props.deleteHouse(id)}}>X</button>
+            </div>
         </div>
     )
 }
