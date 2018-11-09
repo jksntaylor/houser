@@ -12,9 +12,9 @@ module.exports = {
 
         let db = req.app.get('db');
 
-        const {name, address, city, state, zip, img, mortgage, rent} = req.body;
+        const {name, address, city, state, zipcode, img, mortgage, rent} = req.body;
 
-        db.post_house(name, address, city, state, zip, img, mortgage, rent).then( db => {
+        db.post_house(name, address, city, state, zipcode, img, mortgage, rent).then( db => {
             res.sendStatus(200);
         })
     },
